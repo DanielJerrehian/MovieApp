@@ -14,9 +14,13 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 function DrawerComponent({ openDrawer, setOpenDrawer }) {
     const navigate = useNavigate();
 
-    function navigation(link) {
-        navigate(`/${link}`)
-    }
+    function navigatePage(link) {
+        function handleClick() {
+            navigate(`/${link}`);
+            setOpenDrawer(false);
+        }
+        return () => handleClick()
+    };
 
     return (
         <Drawer
@@ -31,7 +35,7 @@ function DrawerComponent({ openDrawer, setOpenDrawer }) {
                     </ListItemIcon>
                     <div className="list-item-text">
                         <ListItemText 
-                            onClick={() => navigation("")}
+                            onClick={navigatePage("")}
                             primary="Movies"
                         />
                     </div>
@@ -42,7 +46,7 @@ function DrawerComponent({ openDrawer, setOpenDrawer }) {
                     </ListItemIcon>
                     <div className="list-item-text">
                         <ListItemText 
-                            onClick={() => navigation("trending")}
+                            onClick={navigatePage("trending")}
                             primary="Trending"
                         />
                     </div>
@@ -53,7 +57,7 @@ function DrawerComponent({ openDrawer, setOpenDrawer }) {
                     </ListItemIcon>
                     <div className="list-item-text">
                         <ListItemText 
-                            onClick={() => navigation("series")}
+                            onClick={navigatePage("series")}
                             primary="TV Series"
                         />
                     </div>
