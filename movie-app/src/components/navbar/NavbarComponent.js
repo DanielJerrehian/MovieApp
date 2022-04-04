@@ -11,10 +11,10 @@ import LiveTvIcon from '@mui/icons-material/LiveTv';
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import MovieFilterIcon from '@mui/icons-material/MovieFilter';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import DrawerComponent from "./DrawerComponent";
 import { useTheme } from '@emotion/react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
+import DrawerComponent from "./DrawerComponent";
 
 function NavbarComponent() {
     const [openDrawer, setOpenDrawer] = useState(true)

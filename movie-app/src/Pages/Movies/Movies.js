@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Grid from '@mui/material/Grid';
 
+import ContentDetails from '../../components/ContentDetails/ContentDetails'
 
 function Movies() {
     const [movies, setMovies] = useState([]);
@@ -21,7 +23,6 @@ function Movies() {
             console.error(error);
             setIsError(true);
         }
-
     }
 
     useEffect(() => {
@@ -30,7 +31,14 @@ function Movies() {
 
 
     return (
-        <div>Movies</div>
+        <Grid container direction="row" justify="center" alignItems="center">
+            {movies?.map(
+                movie => 
+                    <Grid item md={6}>
+                        <ContentDetails movie={movie} />
+                    </Grid>
+            )}
+        </Grid>
     )
 }
 
