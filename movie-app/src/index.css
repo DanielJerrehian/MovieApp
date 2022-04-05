@@ -5,6 +5,7 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: black;
 }
 
 code {
@@ -21,7 +22,25 @@ code {
     cursor: pointer;
 }
 
-.movie_card {
+.app-pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: "white";
+    background-color: lightgray;
+}
+
+.app-pagination {
+    /* position: "fixed"; */
+    bottom: 0;
+    z-index: 200;
+    padding: 10px 80px;
+    color: "white";
+    /* width: 100%; */
+    /* margin: auto */
+}
+
+.card {
     position: relative;
     display: block;
     width: 800px;
@@ -32,12 +51,12 @@ code {
     transition: all 0.4s;
 }
 
-.movie_card:hover {
+.card:hover {
     transform: scale(1.02);
     transition: all 0.4s;
 }
 
-.movie_card .info_section {
+.card .info_section {
     position: relative;
     width: 100%;
     height: 100%;
@@ -46,23 +65,26 @@ code {
     border-radius: 10px;
 }
 
-.movie_card .info_section .movie_header {
+.card .info_section .movie_header {
     position: relative;
-    padding: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+    padding-bottom: 0;
     height: 40%;
 }
 
-.movie_card .info_section .movie_header h1 {
+.card .info_section .movie_header h1 {
     color: #fff;
     font-weight: 400;
 }
 
-.movie_card .info_section .movie_header h4 {
+.card .info_section .movie_header h4 {
     color: #9ac7fa;
     font-weight: 400;
 }
 
-.movie_card .info_section .movie_header .minutes {
+.card .info_section .minutes {
     display: inline-block;
     margin-top: 10px;
     color: #fff;
@@ -71,41 +93,44 @@ code {
     border: 1px solid rgba(255, 255, 255, 0.13);
 }
 
-.movie_card .info_section .movie_header .type {
+.card .info_section .type {
     display: inline-block;
     color: #cee4fd;
     margin-left: 10px;
 }
 
-.movie_card .info_section .movie_header .locandina {
+.card .info_section .locandina {
     position: relative;
     float: left;
     margin-right: 20px;
-    height: 120px;
+    height: 90px;
     box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
 }
 
-.movie_card .info_section .movie_desc {
-    padding: 25px;
+.card .info_section .movie_desc {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 0;
+    padding-bottom: 0;
     height: auto;
 }
 
-.movie_card .info_section .movie_desc .text {
+.card .info_section .movie_desc .text {
     color: #cfd6e1;
 }
 
-.movie_card .info_section .movie_social {
+.card .info_section .movie_social {
     height: 10%;
     padding-left: 15px;
     padding-bottom: 20px;
 }
 
-.movie_card .info_section .movie_social ul {
+.card .info_section .movie_social ul {
     list-style: none;
     padding: 0;
 }
 
-.movie_card .info_section .movie_social ul li {
+.card .info_section .movie_social ul li {
     display: inline-block;
     color: rgba(255, 255, 255, 0.4);
     transition: color 0.3s;
@@ -113,12 +138,12 @@ code {
     margin: 0 10px;
 }
 
-.movie_card .info_section .movie_social ul li:hover {
+.card .info_section .movie_social ul li:hover {
     transition: color 0.3s;
     color: rgba(255, 255, 255, 0.8);
 }
 
-.movie_card .blur_back {
+.card .blur_back {
     position: absolute;
     top: 0;
     z-index: 1;
@@ -130,7 +155,7 @@ code {
 
 @media screen and (min-width: 768px) {
     .movie_header {
-        width: 60%;
+        width: 100%;
     }
 
     .movie_desc {
@@ -148,7 +173,7 @@ code {
 }
 
 @media screen and (max-width: 768px) {
-    .movie_card {
+    .card {
         width: 95%;
         margin: 70px auto;
         min-height: 350px;
