@@ -11,8 +11,8 @@ function ContentDetails({ movie }) {
                 <div className="movie_header">
                     <img className="locandina" src={`${movieImage}/${movie?.poster_path}`} />
                     <h1>{movie?.title}</h1>
-                    <h4>{movie?.release_date}</h4>
                     <span className="minutes">{movie?.vote_average}</span>
+                    <h4>{movie?.release_date}</h4>
                 </div>
                 <div className="movie_desc">
                     <p className="text">{movie?.overview}</p>
